@@ -47,7 +47,12 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid #eee;
-  padding: 0;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: 10px;
+  
+  
+  
 }
 
 button {
@@ -60,10 +65,42 @@ button.continue {
   background: royalblue;
   border: 1px solid royalblue;
   color: white;
+  width: 100px;
+  
 }
 
 button.cancel {
   background: white;
   border: 1px solid #ddd;
   color: royalblue;
+  width: 100px;
+}
+
+.container-one {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
+  
+  
+}
+
+.header{
+  font-weight: bold;
+  font-size: larger;
+}
+
+.container-two{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin-left: 60px;
+  padding-bottom: 10px;
+  
+
+}
+.container-three{
+  display: flex;
+  gap: 5px;
 }
