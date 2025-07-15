@@ -3,13 +3,24 @@
   padding: 0;
 }
 
+
 .container {
   text-align: center;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'header header'
+  'side titles'
+  'side main'
+  'footer footer'
+  ;
+  
 }
 
 .container div {
   padding: 15px;
-  font-size: 32px;
   font-family: Helvetica;
   font-weight: bold;
   color: white;
@@ -17,15 +28,64 @@
 
 .header {
   background-color: #393f4d;
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: 
+  'logo links'
+  ;
+
+  
 }
 
-.menu ul,
-.menu li {
+.logo{
+  grid-area: logo;
+  align-self: center;
+  font-size: 32px;
+}
+
+.menu{
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+  'link-1 link-2 link-3 link-4';
+  justify-content: center;
+  align-content: center;
   font-size: 16px;
+  
+}
+
+
+
+.link-1{
+  grid-area: link-1;
+  
+  
+  
+}
+
+.link-2{
+  grid-area: link-2;
+}
+
+.link-3{
+  grid-area: link-3;
+}
+
+.link-4{
+  grid-area: link-4;
 }
 
 .sidebar {
   background-color: #C50208;
+  grid-area: side;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: space-between;
+  gap: 50px;
+
 }
 
 .sidebar .photo {
@@ -34,6 +94,7 @@
   font-size: 12px;
   font-weight: normal;
   border-radius: 10px;
+  align-content: center;
 }
 
 
@@ -42,19 +103,35 @@
   color: black;
   font-size: 16px;
   font-weight: normal;
+  align-content: center;
 }
 
 .nav {
   background-color: #C50208;
+  grid-area: titles;
+
 }
 
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  display: inline;
+  justify-content: space-evenly;
+}
+
+.nav ul{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .article {
   background-color: #bccbde;
+  overflow: hidden;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax( 250px, 1fr));
+  grid-template-rows: auto;
+  gap: 16px;
 }
 
 .article p {
@@ -68,6 +145,7 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
@@ -83,6 +161,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-area: footer;
 }
 
 .footer p {
